@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index</title>
+</head>
+<body>
+	<h1>Hello World</h1>
+	<div>
+		<h1>Registration</h1>
+		<form action="{% url 'home:register' %}" method="post">
+			{% csrf_token %}
+			<label>First Name: </label>
+			<input type="text" name="first_name"><br>
+
+			<label>Last Name: </label>
+			<input type="text" name="last_name"><br>
+
+			<label>Email: </label>
+			<input type="text" name="email"><br>
+
+			<label>Password: </label>
+			<input type="text" name="password"><br>
+
+			<label>Confirm Password: </label>
+			<input type="text" name="password_confirm"><br>
+
+			<input type="submit" name="submit" value="Register!">
+		</form>
+	</div>
+
+	<div>
+		<h1>Login</h1>
+		<form action="{% url 'home:login' %}" method="post">
+			{% csrf_token %}
+			<label>Email: </label>
+			<input type="text" name="email"><br>
+
+			<label>Password: </label>
+			<input type="text" name="password"><br>
+
+			<input type="submit" name="submit" value="Login">
+		</form>
+	</div>
+</body>
+</html>
